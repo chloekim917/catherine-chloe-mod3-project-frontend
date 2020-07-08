@@ -1,9 +1,16 @@
 document.addEventListener("DOMContentLoaded", function(e){
-    
 
-console.log("loaded")
+    function addData(chart, label, data) {
+        chart.data.labels.push(label);
+        chart.data.datasets.forEach((dataset) => {
+            dataset.data.push(data);
+        });
+        chart.update();
+    }
+    //define chartData[labels]
+    //define chart
+    //define chartData[dataset]
 
-    
     let chartData = {
         labels: [
             "Food","Utilities","Entertainment",
@@ -13,8 +20,8 @@ console.log("loaded")
             ],
 
         datasets: [{
-            data: [20, 30, 40, 10],
-            backgroundColor: ["#8FBC8F", "#00CED1", "#00BFFF","#E0FFFF"]
+            data: [20, 30, 40, 10, 20, 30, 40, 10,20, 30, 40, 10],
+            backgroundColor: ["#8FBC8F", "#00CED1", "#00BFFF","#E0FFFF","#8FBC8F", "#00CED1", "#00BFFF","#E0FFFF", "#8FBC8F", "#00CED1", "#00BFFF","#E0FFFF"]
         }]
     };
 
@@ -28,18 +35,20 @@ console.log("loaded")
         }
       };
       
-    // Get the context of the canvas element we want to select
-    //to compile this we will need to be adding to a total every time an expenditure is added
-    let donut = document.getElementById("donut").getContext("2d");
-    new Chart(donut, {
-        type: 'doughnut',
-        data: chartData,
-        options: chartOptions
-    });
+    function renderDonutChart(){
+        let donut = document.getElementById("donut").getContext("2d");
+        new Chart(donut, {
+            type: 'doughnut',
+            data: chartData,
+            options: chartOptions
+        });
+    }
+    renderDonutChart();
+    
+   
 
-    // const donutChartId = document.getElementsByTagName("script")[1].dataset.id
-    // const ComparisonChartId = document.getElementsByTagName("script")[2].dataset.id
 
+//bar comparison chart below
     let barData = {
         labels: [
             "Food",
@@ -65,12 +74,20 @@ console.log("loaded")
         }
       };
 
-      let bar = document.getElementById("bar-graph").getContext("2d");
-      new Chart(bar, {
-        type: 'bar',
-        data: barData,
-        options: barOptions
-    }); 
+      function renderBarChart(){
+        let bar = document.getElementById("bar-graph").getContext("2d");
+        new Chart(bar, {
+          type: 'bar',
+          data: barData,
+          options: barOptions
+        }); 
+      }
+      renderBarChart();
 
+     
+
+   
+
+    
 
 })
