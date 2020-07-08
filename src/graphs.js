@@ -1,26 +1,53 @@
 document.addEventListener("DOMContentLoaded", function(e){
 
-    function addData(chart, label, data) {
-        chart.data.labels.push(label);
-        chart.data.datasets.forEach((dataset) => {
-            dataset.data.push(data);
-        });
-        chart.update();
-    }
-    //define chartData[labels]
-    //define chart
-    //define chartData[dataset]
+   const dataContainer = document.querySelector("#data-container")
 
+//    function render(expenditure){
+//             let spent = document.createElement("tr")
+//             let spendingCategory = document.createElement('td')
+//             let spendingDetail = document.createElement('td')
+//             let spendingAmount = document.createElement('td')
+//             let totalDisplay = document.querySelector('.grand-total')
+
+   function renderExpenditure(expenditure){
+       const expenditureDiv = document.createElement("div");
+       expenditureDiv.id = `${expenditure.attributes.id}`
+       expenditureDiv.innerText= `
+        ${expenditure.attributes.date} 
+        ${expenditure.attributes.detail} 
+        ${expenditure.attributes.amount} 
+        ${expenditure.attributes.category.name} 
+       `
+       dataContainer.append(expenditureDiv);
+   }
+
+   function renderAllExpenditures(dataObject){
+       dataObject.data.forEach(expenditure => {
+        renderExpenditure(expenditure)
+       }) 
+   }
+
+   function getExpenditures(){
+        fetch('http://localhost:3000/api/v1/expenditures')
+        .then(resp => resp.json())
+        .then(expenditures => {expenditures.data.forEach(expenditure => {
+            renderExpenditure(expenditure) 
+            })        
+        })
+    }
+    getExpenditures()
+
+   
     let chartData = {
         labels: [
-            "Food","Utilities","Entertainment",
+            "Utilities","Entertainment",
             "Housing", "Transportation", "Personal Care", 
             "Gift", "Miscellaneous", "Travel", "Groceries", 
             "Medical", "Pet Care"
             ],
 
         datasets: [{
-            data: [20, 30, 40, 10, 20, 30, 40, 10,20, 30, 40, 10],
+            data: [20, 30, 40, 10, 20, 30, 40, 10,20, 30, 40],
             backgroundColor: ["#8FBC8F", "#00CED1", "#00BFFF","#E0FFFF","#8FBC8F", "#00CED1", "#00BFFF","#E0FFFF", "#8FBC8F", "#00CED1", "#00BFFF","#E0FFFF"]
         }]
     };
@@ -43,7 +70,22 @@ document.addEventListener("DOMContentLoaded", function(e){
             options: chartOptions
         });
     }
-    renderDonutChart();
+    
+
+    let donutLabels = chartData.labels //will give an array
+    const donutChart = renderDonutChart() //will give chart
+    let donutData = chartData.dataset  //data array
+
+    function addData(chart, label, data) {
+        //console.log(chart.data.labels)
+        chart.data.labels.push(label);
+        chart.data.datasets.forEach((dataset) => {
+            dataset.data.push(data);
+        });
+        chart.update();
+    }
+
+    addData(donutChart, "Food", 85)
     
    
 
@@ -85,9 +127,4 @@ document.addEventListener("DOMContentLoaded", function(e){
       renderBarChart();
 
      
-
-   
-
-    
-
 })
