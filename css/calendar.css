@@ -1,0 +1,303 @@
+/* body {
+    width: 50%;
+    margin: 100px auto;
+    background-color: lightgray;
+    font-family: 'Kanit', sans-serif;
+  } */
+
+  .color-pads {
+    width: 680px;
+    height: 480px;
+    border-radius: 20px;
+    background-color: rgba(36, 201, 36, 0.651);
+    position: relative;
+    color: black;
+  }
+  
+  .card {
+    width: 660px;
+    height: 460px;
+    border-radius: 20px;
+    background-color: white;
+    position: relative;
+    color: black;
+    font-family: 'Kanit', sans-serif;
+  }
+  
+  .big-year {
+    color: #E8E8E8;
+    font-size: 30px;
+    float: right;
+    position: relative;
+    right: 75px;
+    top: 20px;
+    font-weight: bold;
+  }
+  
+  .triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-right: 10px solid #E8E8E8;
+    border-bottom: 5px solid transparent;
+    float: right;
+    position: relative;
+    right: 90px;
+    top: 36px;
+  }
+  
+  .triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-left: 10px solid #E8E8E8;
+    border-bottom: 5px solid transparent;
+    float: right;
+    position: relative;
+    left: 20px;
+    top: 36px;
+  }
+
+  .triangle-left:hover{
+    border-right: 10px solid#2ECC71;
+  }
+  .triangle-right:hover{
+    border-left: 10px solid#2ECC71;
+  }
+  
+  /* .month-color {
+    color: #27AE60;
+  } */
+
+  .each-month:hover{
+    color:#27e879 !important;
+  }
+
+  /* .each-month:active{
+    font-weight:bold;
+  } */
+  
+  .months {
+    color: #AAAAAA;
+    position: relative;
+    left: 20px;
+    /* right: 10px; */
+    top: 90px;
+    word-spacing: 17px;
+    text-align: center;
+  }
+  
+  .month-line {
+    border-color: #E8E8E8;
+    position: relative;
+    top: 85px;
+    width: 85%;
+    left: 10px;
+  }
+
+  .calendar-table {
+    table-layout: fixed ;
+    width: 100% ;
+    position: relative;
+    /* height: 280px; */
+    height: 80%;
+    top: 90px;
+
+    text-align: center;
+    vertical-align: center;
+    /* padding: 15px; */
+    /* word-spacing: 15px; */
+
+  }
+  
+  .days-of-week {
+    color: #AAAAAA;
+    position: relative;
+    font-size: 18px;
+    word-spacing: 80px;
+    font-weight: 600;
+  }
+
+  td {
+    width: 25% ;
+    height: 15% ;
+  }
+
+  #calendar-body {
+    color: rgb(95, 92, 92);
+  }
+
+  [title~="today"] {
+    background-color: #2ECC71;
+    display:block;
+    height: 88%;
+    width: 43%;
+    border-radius:50%;
+    margin:auto;
+    line-height:44px;
+    text-align: center;
+  }
+  
+  /* .num-dates {
+    float: right;
+    position: relative;
+    top: 110px;
+    right: 50px;
+    z-index: 1;
+  } */
+  
+  /* .first-week {
+    margin-bottom: 25px;
+    word-spacing: 55px;
+  } */
+  
+  /* .second-week {
+    margin-bottom: 25px;
+    word-spacing: 53px;
+  } */
+  
+  /* .third-week {
+    margin-bottom: 25px;
+    word-spacing: 58px;
+  } */
+  
+  /* .fourth-week {
+    margin-bottom: 25px;
+    word-spacing: 58px;
+  } */
+  
+  /* .fifth-week {
+    margin-bottom: 25px;
+    word-spacing: 56px;
+  } */
+  
+  /* .sixth-week {
+    margin-bottom: 25px;
+    word-spacing: 55px;
+  } */
+  
+  /* .active-day {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #2ECC71;
+    position: relative;
+    top: 295px;
+    left: 661px;
+  } */
+  
+  /* .white {
+    color: white;
+  } */
+  
+  /* .event-indicator {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #2980B9;
+    position: relative;
+    top: 304px;
+    left: 695px;
+  } */
+  
+  /* .two {
+    position: relative;
+    top: 168px;
+    left: 535px;
+  } */
+  
+  /* .grey {
+    color: #AAAAB1;
+  } */
+  
+  /* .calendar-left {
+    width: 300px;
+    height: 500px;
+    border-radius: 20px 0px 0px 20px;
+    background-color: #2ECC71;
+    position: relative;
+    z-index: -1;
+    bottom: 500px;
+    color: white;
+  } */
+  
+  /* .hamburger {
+    position: relative;
+    top: 25px;
+    left: 25px;
+  } */
+  
+  /* .burger-line:hover, .hamburger:hover{
+    background-color:#27e879 !important;
+  } */
+  
+  /* .burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 15%;
+    margin-bottom: 3px;
+  } */
+  
+  /* .num-date {
+    font-size: 150px;
+    width: 50%;
+    margin: 0 auto;
+    font-weight: 700;
+  } */
+  
+  /* .day {
+    width: 50%;
+    margin: 0px auto;
+    font-size: 30px;
+    position: relative;
+    bottom: 60px;
+  } */
+  
+  /* .current-events {
+    font-size: 15px;
+    position: relative;
+    margin-left: 25px;
+    bottom: 30px;
+  } */
+  
+  /* .posts {
+    text-decoration: underline dotted;
+  } */
+  /* .posts:hover{
+    color:#27e879 !important;
+  } */
+  
+  /* .create-event {
+    font-size: 18px;
+    position: relative;
+    margin-top: 30px;
+    margin-left: 25px;
+  } */
+  
+  /* .event-line {
+    width: 90%;
+  } */
+  
+  /* .add-event {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    border-radius: 50%;
+    border: solid white 2px;
+    position: relative;
+    bottom: 42px;
+    left: 260px;
+  } */
+  
+  /* .add {
+    font-size: 25px;
+    position: relative;
+    left: 4px;
+    bottom: 10px;
+  } */
+  
+  /* .add:hover, .create-event:hover, .add-event:hover{
+    color:#27e879 !important;
+    border-color: #27e879 !important;
+  } */
