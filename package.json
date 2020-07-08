@@ -1,0 +1,23 @@
+{
+  "name": "catherine-chloe-mod3-project-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "chart.js": "^2.9.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chloekim917/catherine-chloe-mod3-project-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chloekim917/catherine-chloe-mod3-project-frontend/issues"
+  },
+  "homepage": "https://github.com/chloekim917/catherine-chloe-mod3-project-frontend#readme"
+}

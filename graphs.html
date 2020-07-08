@@ -1,0 +1,99 @@
+ <!DOCTYPE html>
+
+ <html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>MintApp</title>
+        <script src="./node_modules/chart.js/dist/Chart.min.js"></script>
+    </head>
+    
+    <body>
+        <h1>Mint App</h1>
+        <div class="chart-container" style="width: 400px; height: 400px">
+            <canvas id="donut"></canvas>
+        </div>
+    
+        <script data-id="donut-data">
+            let chartData = {
+                labels: [
+                    "Food",
+                    "Utilities",
+                    "Entertainment",
+                    "Medical"
+                    ],
+    
+                datasets: [{
+                    data: [20, 30, 40, 10],
+                    backgroundColor: ["#8FBC8F", "#00CED1", "#00BFFF","#E0FFFF"]
+                }]
+            };
+
+            let chartOptions = {
+                legend: {
+                  position: 'left'
+                },
+                animation: {
+                  animateRotate: false,
+                  animateScale: true
+                }
+              };
+              
+            // Get the context of the canvas element we want to select
+            //to compile this we will need to be adding to a total every time an expenditure is added
+            let donut = document.getElementById("donut").getContext("2d");
+            new Chart(donut, {
+                type: 'doughnut',
+                data: chartData,
+                options: chartOptions
+            });
+        </script>
+
+        <div class="bar-container" style="width: 420px; height: 400px">
+            <canvas id="bar-graph"></canvas>
+        </div>
+    
+        <script data-id="bar-data">    
+            let barData = {
+                labels: [
+                    "Food",
+                    "Utilities",
+                    "Entertainment", 
+                    "Personal Care"],
+                datasets: [
+                {
+                  label: "Budgeted Amount",
+                  backgroundColor: "#90EE90",
+                  data: [133,221,83,78]
+                }, {
+                  label: "Actual Spending",
+                  backgroundColor: "#66CDAA",
+                  data: [408,547,75,34]
+                }
+              ]
+            };
+
+            let barOptions = {
+                legend: {
+                  position: 'left'
+                }
+              };
+
+              let bar = document.getElementById("bar-graph").getContext("2d");
+              new Chart(bar, {
+                type: 'bar',
+                data: barData,
+                options: barOptions
+            }); 
+        </script> 
+
+    </body>
+    
+    </html>
+
+
+
+
+
+
+
