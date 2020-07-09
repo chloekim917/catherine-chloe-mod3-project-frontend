@@ -10,15 +10,17 @@ document.addEventListener("DOMContentLoaded", function(e){
 //             let totalDisplay = document.querySelector('.grand-total')
 
    function renderExpenditure(expenditure){
-       const expenditureDiv = document.createElement("div");
-       expenditureDiv.id = `${expenditure.attributes.id}`
+
+    
+      //  const expenditureDiv = document.createElement("div");
+      //  expenditureDiv.id = `${expenditure.attributes.id}`
        expenditureDiv.innerText= `
         ${expenditure.attributes.date} 
-        ${expenditure.attributes.detail} 
+        ${expenditure.attributes.description} 
         ${expenditure.attributes.amount} 
         ${expenditure.attributes.category.name} 
        `
-       dataContainer.append(expenditureDiv);
+      //  dataContainer.append(expenditureDiv);
    }
 
    function renderAllExpenditures(dataObject){
@@ -64,20 +66,23 @@ document.addEventListener("DOMContentLoaded", function(e){
       
     function renderDonutChart(){
         let donut = document.getElementById("donut").getContext("2d");
+        
         new Chart(donut, {
             type: 'doughnut',
             data: chartData,
             options: chartOptions
         });
     }
+   
     
 
     let donutLabels = chartData.labels //will give an array
     const donutChart = renderDonutChart() //will give chart
     let donutData = chartData.dataset  //data array
 
+
     function addData(chart, label, data) {
-        //console.log(chart.data.labels)
+        //console.log(chart)
         chart.data.labels.push(label);
         chart.data.datasets.forEach((dataset) => {
             dataset.data.push(data);
@@ -126,5 +131,7 @@ document.addEventListener("DOMContentLoaded", function(e){
       }
       renderBarChart();
 
-     
+
+
+
 })
