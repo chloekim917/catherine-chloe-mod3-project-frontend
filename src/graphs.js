@@ -50,7 +50,9 @@ document.addEventListener("DOMContentLoaded", function(e){
 
         datasets: [{
             data: [20, 30, 40, 10, 20, 30, 40, 10,20, 30, 40],
-            backgroundColor: ["#8FBC8F", "#00CED1", "#00BFFF","#E0FFFF","#8FBC8F", "#00CED1", "#00BFFF","#E0FFFF", "#8FBC8F", "#00CED1", "#00BFFF","#E0FFFF"]
+            backgroundColor: ["#8FBC8F", "#00CED1", "#5F9EA0",
+            "#6495ED","#008B8B", "#8FBC8F", "#483D8B","#E0FFFF", 
+            "#1E90FF", "#00CED1", "#00BFFF","#E0FFFF"]
         }]
     };
 

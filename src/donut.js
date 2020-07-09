@@ -36,12 +36,12 @@ let chartData = {
         "Food","Utilities","Entertainment",
         "Housing", "Transportation", "Personal Care", 
         "Gift", "Miscellaneous", "Travel", "Groceries", 
-        "Medical", "Pet Care"
+        "Medical"
         ],
 
     datasets: [{
-        data: [20, 30, 40, 10, 20, 30, 40, 10,20, 30, 40,10],
-        backgroundColor: ["#8FBC8F", "#00CED1", "#00BFFF","#E0FFFF","#8FBC8F", "#00CED1", "#00BFFF","#E0FFFF", "#8FBC8F", "#00CED1", "#00BFFF","#E0FFFF"]
+        data: [20, 30, 40, 10, 20, 30, 40, 10,20, 30, 40],
+        backgroundColor: ["#00FFFF", "#7FFFD4", "#DEB887","#FF7F50","#CD5C5C","#6495ED", "#FF8C00","#E0FFFF", "#8FBC8F", "#00CED1", "#FF7F50","#FF8C00"]
     }]
 };
 
@@ -110,6 +110,11 @@ function fetchData(url){
             else if(categoryName === "Miscellaneous"){
                 expenseCategory.Miscellaneous += categoryAmount
             }
+
+            else if(categoryName === "Travel"){
+                expenseCategory.Travel += categoryAmount
+            }
+            
             else if(categoryName === "Groceries"){
                 expenseCategory.Groceries += categoryAmount
             }
@@ -153,6 +158,7 @@ fetchData("http://localhost:3000/api/v1/expenditures")
     Gift:0, 
     Miscellaneous: 0, 
     Travel:0,
+    Groceries:0,
     Medical:0, 
     PetCare:0
   }
