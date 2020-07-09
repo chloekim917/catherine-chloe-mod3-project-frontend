@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="css/calendar.css">
+    <link rel="stylesheet" type="text/css" href="css/budget.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
 </head>
 <body>
+    <div class='budgeting'>
+        <form class="budget-form">
+            <select id="categories" name="categories">
+                <option value="1">Food</option>
+                <option value="10">Groceries</option>
+                <option value="2">Utility</option>
+                <option value="3">Entertainment</option>
+                <option value="4">Housing</option>
+                <option value="5">Transportation</option>
+                <option value="6">Personal Care</option>
+                <option value="7">Gift</option>
+                <option value="9">Travel</option>
+                <option value="11">Medical</option>
+                <option value="12">Pet Care</option>
+                <option value="8">Miscellaneous</option>
+            </select>
+            <input
+            type="text"
+            name="bamount"
+            value=""
+            placeholder="Enter category budget"
+            class="input-text"/>
+            <input
+            type="submit"
+            name="submit"
+            value="submit"
+            class="submit-budget"/>
+        </form>
+    </div>
+    <button id="edit-budget-btn">Setup Budget</button>
+    <br><br>
     <div class='color-pads'>
         <div class="card">
             <div class="big-year" id="yearNum"></div>
@@ -52,7 +84,6 @@
         <hr class="event-line" />
         <table class="day-total-table">
             <tbody id='spending-body'>
-    
             </tbody>
             <tbody id='total-of-day'>
                 <td class='total-of-day'>Total:</td>
@@ -119,4 +150,5 @@
 </body>
 <script src="src/calendar.js"></script>
 <script src="src/post_it.js"></script>
+<script src="src/budget.js"></script>
 </html>
