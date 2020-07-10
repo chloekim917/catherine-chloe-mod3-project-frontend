@@ -3,11 +3,13 @@
 }
 
 .donut-name{
+    font-family: 'Abril Fatface';
     font-size: 30px; 
     color: rgb(1, 1, 49);
 }
 
 .bar-name{
+    font-family: 'Abril Fatface';
     font-size: 30px; 
     color: rgb(1, 1, 49);
 }
