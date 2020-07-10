@@ -105,7 +105,7 @@ function fetchData(url){
                 budgetExpenses.Food += budgetAmount
                 //console.log(budgetExpenses.Food += budgetAmount)
             }
-            else if(categoryName === "Utilities"){
+            else if(categoryName === "Utility"){
                 expenseCategory.Utilities += categoryAmount
                 budgetExpenses.Utilities += budgetAmount
             }
