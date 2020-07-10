@@ -41,7 +41,7 @@ let chartData = {
 
     datasets: [{
         data: [20, 30, 40, 10, 20, 30, 40, 10,20, 30, 40],
-        backgroundColor: ["#FFE4E1","#FF69B4","#FF8C00","#FF7F50","#FFD700","#FF4500", "#FF8C00","#E0FFFF", "#E6E6FA", "#FFB6C1", "#FF7F50","#FFD700"]
+        backgroundColor: ["#FFE4E1","#FF69B4","#FF6347","#FF7F50","#FFD700","#FF4500", "#FF8C00","#E0FFFF", "#E6E6FA", "#FFB6C1", "#FF7F50","#FFD700"]
     }]
 };
 
