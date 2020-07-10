@@ -3,6 +3,11 @@
 }
 
 .donut-name{
-    font-size: 35px; 
+    font-size: 30px; 
+    color: rgb(1, 1, 49);
+}
+
+.bar-name{
+    font-size: 30px; 
     color: rgb(1, 1, 49);
 }
