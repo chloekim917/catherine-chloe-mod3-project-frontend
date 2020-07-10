@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
     function addData(chart, data) {
-    console.log(chart)
-    console.log(data)
-    console.log(chart.data.datasets[0].data)
+    // console.log(chart)
+    // console.log(data)
+    // console.log(chart.data.datasets[0].data)
 
    
        
@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", function(e){
         expenseCategory.Housing, expenseCategory.Transportation, expenseCategory.PersonalCare, 
         expenseCategory.Gift, expenseCategory.Miscellaneous, expenseCategory.Travel, 
         expenseCategory.Medical, expenseCategory.PetCare)
-    console.log(newArr)
+    // console.log(newArr)
 
        
     let chartArray = chart.data.datasets[0].data
     chartArray.splice(0, chartArray.length, ... newArr) 
-    console.log(chartArray)
+    // console.log(chartArray)
 
     chart.update();
 

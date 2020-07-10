@@ -9,14 +9,29 @@ function renderMonths(){
     allMonths.forEach(function(month, i){
         let allMonths = document.querySelector('.months')
         let monthSpan = document.createElement('span')
+  
         monthSpan.className = 'each-month'
         monthSpan.id = i+1
     
         monthSpan.innerHTML =` ${month} `
         allMonths.append(monthSpan)
 
+        monthSpan.addEventListener('click', function(e){
+            if(document.querySelector('.hidden-p')){
+                console.log('hi')
+                let sel = document.querySelector('.selected')
+                console.log(sel)
+                sel.className = "each-month"
+            }
+            e.target.className = 'selected'
+            let newp = document.createElement('p')
+            newp.className = 'hidden-p'
+            newp.hidden = true
+            monthSpan.append(newp)
+        })
+
         document.addEventListener('click', function(e){
-            if(e.target.className === 'each-month'){
+            if(e.target.className === 'selected'){
                 e.preventDefault()
                 currentMonth = e.target.id-1
                 currentYear = currentYear
@@ -33,7 +48,7 @@ function renderCalendar(month, year) {
     let calendarTable = document.getElementById("calendar-body");
     calendarTable.innerHTML = "";
     yearNum.innerHTML = `${year}`;
-    monthNum.innerHTML =`${month+1}`
+    // monthNum.innerHTML =`${month+1}`
 
     let date = 1;
     for (let i = 0; i < 6; i++) {

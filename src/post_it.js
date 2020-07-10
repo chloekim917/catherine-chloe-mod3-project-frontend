@@ -7,6 +7,7 @@ let spendingBod = document.getElementById('spending-body')
 let spendingRow = document.querySelector('.spending-row')
 let sp = document.querySelector('.add-spending-form')
 let hideSeek = document.querySelector('.hide-seek')
+let calendarBody = document.getElementById('calendar-body')
 
 
 function getExpenditures(){
@@ -19,7 +20,7 @@ function getExpenditures(){
 
 }
 document.addEventListener('click', function(e){
-    if(e.target.className === 'dates')
+    if(e.target.className === 'selected-day')
     sp.id = e.target.id
 })
 
@@ -32,9 +33,6 @@ function render(expenditure){
     document.addEventListener('click', function(e){
         if(parseInt(e.target.id) === expenditure.attributes.date){
 
-            // spendingBod.innerHTML = ''
-            console.log(e.target)
-
             let spent = document.createElement("tr")
             spent.className = 'spending-row'
             spent.dataset.id = expenditure.id
@@ -46,16 +44,29 @@ function render(expenditure){
             <button>x</button>
             `
             spendingBod.append(spent)
-    
+
             arr.push(expenditure.attributes.amount)
             let totalSpending = arr.reduce(function(a, b){
                 return parseFloat(a + b);
             }, 0);
             totalDisp.textContent=`${totalSpending}`  
-  
         }
     })
 }
+
+calendarBody.addEventListener('click', function(e){
+    if(document.querySelector('.hidden-p2')){
+    console.log('hi')
+    let sel = document.querySelector('.selected-day')
+    console.log(sel)
+    sel.className = "each-month"
+    }
+    e.target.className = 'selected-day'
+    let newpp = document.createElement('p')
+    newpp.className = 'hidden-p2'
+    newpp.hidden = true
+    calendarDate.append(newpp)
+})
 
 function postExpenditures(){
     sp.addEventListener('submit', function(e){

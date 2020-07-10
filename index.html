@@ -3,9 +3,17 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/calendar.css">
     <link rel="stylesheet" type="text/css" href="css/budget.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+        <!-- <script src="src/graphs.js"></script> -->
+    <script src="src/donut.js"></script>
 </head>
 <body>
+    <div class=top-bar>
+       
+    </div>
     <div class='budgeting'>
         <form class="budget-form">
             <select id="categories" name="categories">
@@ -40,7 +48,6 @@
     <div class='color-pads'>
         <div class="card">
             <div class="big-year" id="yearNum"></div>
-            <div class= 'month-indicator' id='monthNum'></div>
             <div class="triangle-left"></div>
             <div class="triangle-right"></div>
             <div class="months">
@@ -146,6 +153,14 @@
               <p class=hide-seek id='11'>Medical</p>
               <p class=hide-seek id='12'>Pet Care</p>
           </div>
+    </div>
+
+    <div class="chart-container" style="width: 600px; height: 600px">
+        <canvas id="donut"></canvas>
+        <canvas id="bar-graph"></canvas>
+    </div>
+    <div id="data-container">
+
     </div>
 </body>
 <script src="src/calendar.js"></script>

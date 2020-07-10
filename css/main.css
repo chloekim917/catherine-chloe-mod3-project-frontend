@@ -1,0 +1,9 @@
+.top-bar {
+    background: rgb(234, 244, 253);
+    opacity: .8;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
