@@ -45,22 +45,21 @@ function render(expenditure){
 
 calendarBody.addEventListener('click', function(e){
     if(document.querySelector('.hidden-p2')){
-    console.log('hi')
     let sel = document.querySelector('.selected-day')
-    console.log(sel)
     sel.className = "each-month"
     }
     e.target.className = 'selected-day'
+    sp.id = e.target.id
     let newpp = document.createElement('p')
     newpp.className = 'hidden-p2'
     newpp.hidden = true
     calendarDate.append(newpp)
 });
 
-document.addEventListener('click', function(e){
-    if(e.target.className === 'selected-day')
-    sp.id = e.target.id
-})
+// document.addEventListener('click', function(e){
+//     if(e.target.className === 'selected-day')
+//     sp.id = e.target.id
+// })
 
 
 function postExpenditures(){
