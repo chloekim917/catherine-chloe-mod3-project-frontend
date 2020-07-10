@@ -1,9 +1,48 @@
 .top-bar {
-    background: rgb(234, 244, 253);
-    opacity: .8;
+    /* background: rgb(234, 244, 253);
+    opacity: .8; */
+    background-image: linear-gradient(
+        rgba(212, 235, 255, 0.904), rgba(255, 255, 255, 0.904)
+    );
     height: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+.middle-bar{
+    /* background-image: linear-gradient(
+     rgba(238, 246, 253, 0.904), white
+    ); */
+    height: 600px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
-  }
+    align-items: center;
+}
+
+.bottom-bar{
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.app-name{
+    font-size: 75px;
+    font-family: 'Abril Fatface';
+    color: rgb(0, 0, 39);
+    font-weight: bolder;
+    margin-top: 60px;
+    margin-bottom: -10px;
+}
+
+.app-description{
+    font-size: 25px;
+    font-family: 'Abril Fatface';
+    color: rgb(0, 0, 39);
+    font-weight: bold;
+}

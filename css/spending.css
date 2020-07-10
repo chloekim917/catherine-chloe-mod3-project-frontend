@@ -1,0 +1,80 @@
+.postit {
+    line-height: 1;
+    text-align:left;     
+    width: 480px;  
+    height: 420px;  
+    margin-left: 100px;    
+    position:relative;   
+    border:1px solid #E8E8E8;  
+    padding-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family:'Nanum Pen Script';  
+    border-bottom-right-radius: 60px 5px;
+    display:inline-block;    
+    font-size: 26px;
+    background-color: #ffff88e7;
+}
+.spending-attributes{
+    font-size: 29px;
+    table-layout: fixed;
+    width: 50%;  
+    color:  rgb(59, 59, 59);
+    text-align: left;
+}
+
+.place-holder, .total, .grand-total {
+    display: inline;}
+
+.hold-place{
+    table-layout: fixed;
+    width: 80%;  
+    height:10px;
+}
+
+#spending-body{
+    font-size: 20px;
+    table-layout: fixed;
+    width: 100%;  
+    text-align: left;
+}
+
+.place-holder{
+    text-align: right;
+    padding-left: 270px;
+}
+
+.grand-total{
+    padding-right: 40px;
+    text-align: right;
+    font-size: 28px;
+    color: #91000C;
+}
+
+.total{
+    /* padding-right: 5px; */
+    text-align: right;
+    font-size: 28px;
+    color: #91000C;
+}
+
+.budgeting {
+    width: stretch;
+    height: auto;
+  }
+
+  .postit:after {     
+    content: "";
+    position:absolute;
+    z-index:-1;
+    right:-0px; bottom:20px;
+    width:200px;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
+  -moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+   -webkit-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+        -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+       -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+           transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  }

@@ -1,0 +1,81 @@
+<div class='note-book'>
+
+    <div class="lines"></div>
+    
+    <div class='post-it'>
+        <div class="current-day">Your spendings
+            <br/>
+            <table class="spending-table" id="spendings">
+                <thead>
+                    <tr>
+                        <th class="spending-attributes">Category</th>
+                        <th class="spending-attributes">Detail</th>
+                        <th class="spending-attributes">Amount</th>
+                    </tr>
+                </thead>
+                <tbody id='spending-body'>
+          
+                </tbody>
+
+            </table>
+        </div>
+        <hr class="event-line" />
+        <table class="day-total-table">
+            <tbody id='spending-body'>
+            </tbody>
+            <tbody id='total-of-day'>
+                <td class='total-of-day'>Total:</td>
+                <tr></tr>
+                <td class='grand-total'></td>
+            </tbody>
+        </table>
+        <div class="create-event">Enter new spending</div>
+        <form class="add-spending-form">
+            <select id="categories" name="categories">
+                <option value="1">Food</option>
+                <option value="10">Groceries</option>
+                <option value="2">Utility</option>
+                <option value="3">Entertainment</option>
+                <option value="4">Housing</option>
+                <option value="5">Transportation</option>
+                <option value="6">Personal Care</option>
+                <option value="7">Gift</option>
+                <option value="9">Travel</option>
+                <option value="11">Medical</option>
+                <option value="12">Pet Care</option>
+                <option value="8">Miscellaneous</option>
+            </select>
+            <input
+              type="text"
+              name="detail"
+              value=""
+              placeholder="Enter spending detail"
+              class="input-text"/>
+            <input
+            type="text"
+            name="amount"
+            value=""
+            placeholder="amount spent"
+            class="input-text"/>
+            <input
+              type="submit"
+              name="submit"
+              value="+"
+              class="submit-new-spending"/>
+          </form>
+          <div hidden class='hidden-id'>
+              <p class=hide-seek id='1'>Food</p>
+              <p class=hide-seek id='2'>Utility</p>
+              <p class=hide-seek id='3'>Entertainment</p>
+              <p class=hide-seek id='4'>Housing</p>
+              <p class=hide-seek id='5'>Transporation</p>
+              <p class=hide-seek id='6'>Personal Care</p>
+              <p class=hide-seek id='7'>Gift</p>
+              <p class=hide-seek id='8'>Miscellaneous</p>
+              <p class=hide-seek id='9'>Travel</p>
+              <p class=hide-seek id='10'>Groceries</p>
+              <p class=hide-seek id='11'>Medical</p>
+              <p class=hide-seek id='12'>Pet Care</p>
+          </div>
+    </div>
+  </div>

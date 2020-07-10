@@ -9,7 +9,6 @@ let sp = document.querySelector('.add-spending-form')
 let hideSeek = document.querySelector('.hide-seek')
 let calendarBody = document.getElementById('calendar-body')
 
-
 function getExpenditures(){
     fetch('http://localhost:3000/api/v1/expenditures')
     .then(resp => resp.json())
@@ -17,17 +16,7 @@ function getExpenditures(){
         render(expenditure)     
     })
 })
-
 }
-document.addEventListener('click', function(e){
-    if(e.target.className === 'selected-day')
-    sp.id = e.target.id
-})
-
-// let spendingBody = document.getElementById('spending-body')
-// spendingBod.innerHTML = ''
-// let totalDisplay = document.querySelector('.grand-total')
-// totalDisplay.innerHTML = ''
 
 function render(expenditure){
     document.addEventListener('click', function(e){
@@ -66,7 +55,13 @@ calendarBody.addEventListener('click', function(e){
     newpp.className = 'hidden-p2'
     newpp.hidden = true
     calendarDate.append(newpp)
+});
+
+document.addEventListener('click', function(e){
+    if(e.target.className === 'selected-day')
+    sp.id = e.target.id
 })
+
 
 function postExpenditures(){
     sp.addEventListener('submit', function(e){
@@ -125,6 +120,7 @@ function deleteExpenditures(){
 
         let deletedAmount = parseFloat(deletingSpending.children[2].textContent)
         let currentTotal = parseFloat(totalDisp.textContent)
+        console.log(currentTotal)
         let newAmount = currentTotal-deletedAmount
         totalDisp.textContent=`${newAmount}`  
         }

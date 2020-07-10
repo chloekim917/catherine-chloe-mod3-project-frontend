@@ -12,6 +12,7 @@
     background-color: rgba(36, 201, 36, 0.651);
     position: relative;
     color: black;
+    margin-left: 40px;
   }
   
   .card {
@@ -22,6 +23,7 @@
     position: relative;
     color: black;
     font-family: 'Kanit', sans-serif;
+    margin-bottom: 30px;
   }
   
   .big-year {

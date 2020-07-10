@@ -2,166 +2,165 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="css/calendar.css">
-    <link rel="stylesheet" type="text/css" href="css/budget.css">
+    <link rel="stylesheet" type="text/css" href="css/graph.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/spending.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <!-- <script src="src/graphs.js"></script> -->
     <script src="src/donut.js"></script>
 </head>
 <body>
-    <div class=top-bar>
-       
+    <div class='top-bar'>
+       <h1 class='app-name'>Our App Name</h1>
+       <h2 class='app-description'>Easy budgeting & expense tracking solution</h2>
     </div>
-    <div class='budgeting'>
-        <form class="budget-form">
-            <select id="categories" name="categories">
-                <option value="1">Food</option>
-                <option value="10">Groceries</option>
-                <option value="2">Utility</option>
-                <option value="3">Entertainment</option>
-                <option value="4">Housing</option>
-                <option value="5">Transportation</option>
-                <option value="6">Personal Care</option>
-                <option value="7">Gift</option>
-                <option value="9">Travel</option>
-                <option value="11">Medical</option>
-                <option value="12">Pet Care</option>
-                <option value="8">Miscellaneous</option>
-            </select>
-            <input
-            type="text"
-            name="bamount"
-            value=""
-            placeholder="Enter category budget"
-            class="input-text"/>
-            <input
-            type="submit"
-            name="submit"
-            value="submit"
-            class="submit-budget"/>
-        </form>
-    </div>
-    <button id="edit-budget-btn">Setup Budget</button>
-    <br><br>
-    <div class='color-pads'>
-        <div class="card">
-            <div class="big-year" id="yearNum"></div>
-            <div class="triangle-left"></div>
-            <div class="triangle-right"></div>
-            <div class="months">
-            </div>
-            <hr class="month-line" />
-            <table class="calendar-table" id="calendar">
-                <thead>
-                <tr>
-                    <th class="days-of-week">Sun</th>
-                    <th class="days-of-week">Mon</th>
-                    <th class="days-of-week">Tue</th>
-                    <th class="days-of-week">Wed</th>
-                    <th class="days-of-week">Thu</th>
-                    <th class="days-of-week">Fri</th>
-                    <th class="days-of-week">Sat</th>
-                </tr>
-                </thead>
-                <tbody id="calendar-body">
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class='post-it'>
-        <div class="current-day">Your spendings
-            <br/>
-            <table class="spending-table" id="spendings">
-                <thead>
+    <div class= 'middle-bar'>
+        <div class='color-pads'>
+            <div class="card">
+                <div class="big-year" id="yearNum"></div>
+                <div class="triangle-left"></div>
+                <div class="triangle-right"></div>
+                <div class="months">
+                </div>
+                <hr class="month-line" />
+                <table class="calendar-table" id="calendar">
+                    <thead>
                     <tr>
-                        <th class="spending-attributes">Category</th>
-                        <th class="spending-attributes">Detail</th>
-                        <th class="spending-attributes">Amount</th>
+                        <th class="days-of-week">Sun</th>
+                        <th class="days-of-week">Mon</th>
+                        <th class="days-of-week">Tue</th>
+                        <th class="days-of-week">Wed</th>
+                        <th class="days-of-week">Thu</th>
+                        <th class="days-of-week">Fri</th>
+                        <th class="days-of-week">Sat</th>
                     </tr>
-                </thead>
-                <tbody id='spending-body'>
-          
-                </tbody>
-
-            </table>
+                    </thead>
+                    <tbody id="calendar-body">
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <hr class="event-line" />
-        <table class="day-total-table">
-            <tbody id='spending-body'>
-            </tbody>
-            <tbody id='total-of-day'>
-                <td class='total-of-day'>Total:</td>
-                <tr></tr>
-                <td class='grand-total'></td>
-            </tbody>
-            <!-- <tbody id='spending-body'>
-                <tr id='spending-body'>
-                    <td class='total-of-day'>Total:</td>
-                    <td></td>
-                    <td class='grand-total'></td>
-                </tr>
-            </tbody> -->
-        </table>
-        <div class="create-event">Enter new spending</div>
-        <form class="add-spending-form">
-            <select id="categories" name="categories">
-                <option value="1">Food</option>
-                <option value="10">Groceries</option>
-                <option value="2">Utility</option>
-                <option value="3">Entertainment</option>
-                <option value="4">Housing</option>
-                <option value="5">Transportation</option>
-                <option value="6">Personal Care</option>
-                <option value="7">Gift</option>
-                <option value="9">Travel</option>
-                <option value="11">Medical</option>
-                <option value="12">Pet Care</option>
-                <option value="8">Miscellaneous</option>
-            </select>
-            <input
-              type="text"
-              name="detail"
-              value=""
-              placeholder="Enter spending detail"
-              class="input-text"/>
-            <input
-            type="text"
-            name="amount"
-            value=""
-            placeholder="amount spent"
-            class="input-text"/>
-            <input
-              type="submit"
-              name="submit"
-              value="+"
-              class="submit-new-spending"/>
-          </form>
-          <div hidden class='hidden-id'>
-              <p class=hide-seek id='1'>Food</p>
-              <p class=hide-seek id='2'>Utility</p>
-              <p class=hide-seek id='3'>Entertainment</p>
-              <p class=hide-seek id='4'>Housing</p>
-              <p class=hide-seek id='5'>Transporation</p>
-              <p class=hide-seek id='6'>Personal Care</p>
-              <p class=hide-seek id='7'>Gift</p>
-              <p class=hide-seek id='8'>Miscellaneous</p>
-              <p class=hide-seek id='9'>Travel</p>
-              <p class=hide-seek id='10'>Groceries</p>
-              <p class=hide-seek id='11'>Medical</p>
-              <p class=hide-seek id='12'>Pet Care</p>
-          </div>
+    
+        <div class="postit">
+            <div class='post-it'>
+                <div class="current-day">
+                    <br/>
+                    <table class="spending-table" id="spendings">
+                        <thead>
+                            <tr>
+                                <th class="spending-attributes">Category</th>
+                                <th class="spending-attributes">Detail</th>
+                                <th class="spending-attributes">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id='spending-body'>
+                            <tr class='hold-place'></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <br>
+                <p class='place-holder'></p>
+                <p class="total">Total: $</p>
+                <p class='grand-total'></p>
+                <br>
+                <div class="create-event">Enter New Spending</div>
+                <form class="add-spending-form">
+                    <select id="categories" name="categories">
+                        <option value="1">Food</option>
+                        <option value="10">Groceries</option>
+                        <option value="2">Utility</option>
+                        <option value="3">Entertainment</option>
+                        <option value="4">Housing</option>
+                        <option value="5">Transportation</option>
+                        <option value="6">Personal Care</option>
+                        <option value="7">Gift</option>
+                        <option value="9">Travel</option>
+                        <option value="11">Medical</option>
+                        <option value="12">Pet Care</option>
+                        <option value="8">Miscellaneous</option>
+                    </select>
+                    <input
+                      type="text"
+                      name="detail"
+                      value=""
+                      placeholder="Enter spending detail"
+                      class="input-text"/>
+                    <input
+                    type="text"
+                    name="amount"
+                    value=""
+                    placeholder="amount spent"
+                    class="input-text"/>
+                    <input
+                      type="submit"
+                      name="submit"
+                      value="+"
+                      class="submit-new-spending"/>
+                  </form>
+                  <div hidden class='hidden-id'>
+                      <p class=hide-seek id='1'>Food</p>
+                      <p class=hide-seek id='2'>Utility</p>
+                      <p class=hide-seek id='3'>Entertainment</p>
+                      <p class=hide-seek id='4'>Housing</p>
+                      <p class=hide-seek id='5'>Transporation</p>
+                      <p class=hide-seek id='6'>Personal Care</p>
+                      <p class=hide-seek id='7'>Gift</p>
+                      <p class=hide-seek id='8'>Miscellaneous</p>
+                      <p class=hide-seek id='9'>Travel</p>
+                      <p class=hide-seek id='10'>Groceries</p>
+                      <p class=hide-seek id='11'>Medical</p>
+                      <p class=hide-seek id='12'>Pet Care</p>
+                  </div>
+            </div>
+            <div class='budgeting'>
+                <div>Set Category Budget</div>
+                <form class="budget-form">
+                    <select id="categories" name="categories">
+                        <option value="1">Food</option>
+                        <option value="10">Groceries</option>
+                        <option value="2">Utility</option>
+                        <option value="3">Entertainment</option>
+                        <option value="4">Housing</option>
+                        <option value="5">Transportation</option>
+                        <option value="6">Personal Care</option>
+                        <option value="7">Gift</option>
+                        <option value="9">Travel</option>
+                        <option value="11">Medical</option>
+                        <option value="12">Pet Care</option>
+                        <option value="8">Miscellaneous</option>
+                    </select>
+                    <input
+                    type="text"
+                    name="bamount"
+                    value=""
+                    placeholder="Enter category budget"
+                    class="input-text"/>
+                    <input
+                    type="submit"
+                    name="submit"
+                    value="submit"
+                    class="submit-budget"/>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    <div class='bottom-bar'>
+        <div class="chart-container" style="width: 600px; height: 600px">
+            <h4 class='donut-name'>This Month's Spending</h4>
+            <canvas id="donut"></canvas>
+            <canvas id="bar-graph"></canvas>
+        </div>
+        <div id="data-container">
+        </div>
     </div>
 
-    <div class="chart-container" style="width: 600px; height: 600px">
-        <canvas id="donut"></canvas>
-        <canvas id="bar-graph"></canvas>
-    </div>
-    <div id="data-container">
-
-    </div>
 </body>
 <script src="src/calendar.js"></script>
 <script src="src/post_it.js"></script>
