@@ -1,10 +1,10 @@
-let postIt = document.querySelector('.post-it')
-let spendingTable = document.querySelector('.spending-table')
+// let postIt = document.querySelector('.post-it')
+// let spendingTable = document.querySelector('.spending-table')
+// let spendingRow = document.querySelector('.spending-row')
 let calendarDate = document.querySelector('.dates')
 let arr = []
 let totalDisp = document.querySelector('.grand-total')
 let spendingBod = document.getElementById('spending-body')
-let spendingRow = document.querySelector('.spending-row')
 let sp = document.querySelector('.add-spending-form')
 let hideSeek = document.querySelector('.hide-seek')
 let calendarBody = document.getElementById('calendar-body')
@@ -56,28 +56,26 @@ calendarBody.addEventListener('click', function(e){
     calendarDate.append(newpp)
 });
 
-// document.addEventListener('click', function(e){
-//     if(e.target.className === 'selected-day')
-//     sp.id = e.target.id
-// })
 
-
-function postExpenditures(){
-    sp.addEventListener('submit', function(e){
-        let spendingObj = {
-            date: sp.id,
-            category_id: parseInt(sp.categories.value),
-            category: sp.categories.value,
-            detail: sp.detail.value,
-            amount: parseFloat(sp.amount.value)
-        }
- 
-        e.preventDefault()
-        fetch('http://localhost:3000/api/v1/expenditures', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
+sp.addEventListener('submit', function(e){
+    e.preventDefault()
+    let spendingObj = {
+        date: sp.id,
+        category_id: parseInt(sp.categories.value),
+        category: sp.categories.value,
+        detail: sp.detail.value,
+        amount: parseFloat(sp.amount.value)
+    }
+    postExpenditures(spendingObj)
+})
+    
+   
+function postExpenditures(spendingObj){
+    fetch('http://localhost:3000/api/v1/expenditures', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
             },
             body: JSON.stringify(spendingObj)
         })
@@ -87,13 +85,13 @@ function postExpenditures(){
             let newSpent = document.createElement('tr')
             newSpent.className = 'spending-row'
             
-        newSpent.innerHTML = `
-        <td class='expense-category'>${hideSeek.textContent}</td>
-        <td class='expense-detail'>${spendingObj.detail}</td>
-        <td class='expense-amount'>${spendingObj.amount}</td>
-        <button>x</button>
-        `
-        spendingBod.append(newSpent)
+            newSpent.innerHTML = `
+            <td class='expense-category'>${hideSeek.textContent}</td>
+            <td class='expense-detail'>${spendingObj.detail}</td>
+            <td class='expense-amount'>${spendingObj.amount}</td>
+            <button>x</button>
+            `
+        spendingBody.append(newSpent)
         }
         
         arr.push(spendingObj.amount)
@@ -103,8 +101,67 @@ function postExpenditures(){
         totalDisp.textContent=`${totalSpending}`  
 
         sp.reset()
-    })
-}
+    }
+
+
+
+
+
+
+
+
+
+
+
+// document.addEventListener('click', function(e){
+//     if(e.target.className === 'selected-day')
+//     sp.id = e.target.id
+// })
+
+
+// function postExpenditures(){
+//     sp.addEventListener('submit', function(e){
+//         let spendingObj = {
+//             date: sp.id,
+//             category_id: parseInt(sp.categories.value),
+//             category: sp.categories.value,
+//             detail: sp.detail.value,
+//             amount: parseFloat(sp.amount.value)
+//         }
+ 
+//         e.preventDefault()
+//         fetch('http://localhost:3000/api/v1/expenditures', {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 "Accept": "application/json"
+//             },
+//             body: JSON.stringify(spendingObj)
+//         })
+
+//         let objId = spendingObj.category
+//         if(hideSeek.id === objId){
+//             let newSpent = document.createElement('tr')
+//             newSpent.className = 'spending-row'
+            
+//         newSpent.innerHTML = `
+//         <td class='expense-category'>${hideSeek.textContent}</td>
+//         <td class='expense-detail'>${spendingObj.detail}</td>
+//         <td class='expense-amount'>${spendingObj.amount}</td>
+//         <button>x</button>
+//         `
+//         spendingBod.append(newSpent)
+//         }
+        
+//         arr.push(spendingObj.amount)
+//         let totalSpending = arr.reduce(function(a, b){
+//             return parseFloat(a + b);
+//         }, 0);
+//         totalDisp.textContent=`${totalSpending}`  
+
+//         sp.reset()
+//     })
+// }
 
 function deleteExpenditures(){
     document.addEventListener('click', function(e){
