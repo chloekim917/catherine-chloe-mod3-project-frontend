@@ -2,8 +2,8 @@
 document.addEventListener("DOMContentLoaded", function(e){
 
     function addData(chart, data) {
-    // console.log(chart)
-    // console.log(data)
+     //console.log(chart)
+    //console.log(data)
     // console.log(chart.data.datasets[0].data)
 
     let newArr = []
@@ -17,25 +17,29 @@ document.addEventListener("DOMContentLoaded", function(e){
        
     let chartArray =  chart.data.datasets[0].data
     chartArray.splice(0, chartArray.length, ... newArr) 
-    // console.log(chartArray)
+    //console.log(chartArray)
 
     chart.update();
     }
 
    
     function addBarData(chart, data) {
+        //console.log(chart)
+    //console.log(data)
+     //console.log(chart.data.datasets[1].data)
+
         let newArray = []
     
         newArray.push(budgetExpenses.Food, budgetExpenses.Utilities, budgetExpenses.Entertainment, 
             budgetExpenses.Housing, budgetExpenses.Transportation, budgetExpenses.PersonalCare, 
             budgetExpenses.Gift, budgetExpenses.Miscellaneous, budgetExpenses.Travel, 
             budgetExpenses.Medical, budgetExpenses.PetCare)
-        // console.log(newArray)
+        //console.log(newArray)
     
            
         let barChartArray = chart.data.datasets[1].data
         barChartArray.splice(0, barChartArray.length, ... newArray) 
-        // console.log(barChartArray)
+        //console.log(barChartArray)
     
         chart.update();
         }
@@ -99,7 +103,7 @@ function fetchData(url){
             if(categoryName === "Food"){
                 expenseCategory.Food += categoryAmount
                 budgetExpenses.Food += budgetAmount
-                //console.log(expenseCategory.Food += categoryAmount)
+                //console.log(budgetExpenses.Food += budgetAmount)
             }
             else if(categoryName === "Utilities"){
                 expenseCategory.Utilities += categoryAmount
@@ -152,7 +156,6 @@ function fetchData(url){
             
             addData(barChart2,expenseCategory)
             addBarData(barChart2,budgetExpenses)
-          
         })
     
     }
